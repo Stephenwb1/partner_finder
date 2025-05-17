@@ -1,33 +1,32 @@
-const trainingPartners = [
+[
   {
-    name: "Craig Jones",
-    location: "Austin, Texas", 
-    distance: "500",
-    years_training: "31",
-    gender: "male",
-    belt: "black",
-    height: "5'11",
-    weight: "190"
+    "name": "Craig Jones",
+    "location": "Austin, Texas", 
+    "distance": "500",
+    "years_training": "31",
+    "gender": "male",
+    "belt": "black",
+    "height": "5'11",
+    "weight": "190"
   },
   {
-    name: "Jerry Lukose",
-    location: "Santa Cruz, California", 
-    distance: "0",
-    years_training: "13",
-    gender: "male",
-    belt: "blue",
-    height: "6'1",
-    weight: "380"
+    "name": "Jerry Lukose",
+    "location": "Santa Cruz, California", 
+    "distance": "0",
+    "years_training": "13",
+    "gender": "male",
+    "belt": "blue",
+    "height": "6'1",
+    "weight": "380"
   },
   {
-    name: "Jameson Spence",
-    location: "Santa Cruz, California", 
-    distance: "0",
-    years_training: "7",
-    gender: "male",
-    belt: "purple",
-    height: "5'8",
-    weight: "175"
+    "name": "Jameson Spence",
+    "location": "Santa Cruz, California", 
+    "distance": "0",
+    "years_training": "7",
+    "gender": "male",
+    "belt": "purple",
+    "height": "5'8",
+    "weight": "175"
   }
-
 ]
