@@ -5,7 +5,7 @@ const app = document.getElementById("app");
 let peopleData = [];
 
 // Load data
-fetch('data/people.json')
+fetch('data/data.json')
   .then(response => response.json())
   .then(data => {
     peopleData = data;
