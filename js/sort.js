@@ -51,9 +51,13 @@ function renderPartners(partners) {
     div.innerHTML = `
       <h3>${partner.name}</h3>
       <p>Gender: ${partner.gender}</p>
+      <p>Age: ${partner.age}</p>
+      <p>Belt Level: ${partner.belt}</p>
+      <p>Years of Experience: ${partner.years_training}</p>
       <p>Height: ${partner.height} cm</p>
-      <p>Weight: ${partner.weight} kg</p>
-      <p>Distance: ${partner.distance} km</p>
+      <p>Weight: ${partner.weight} lbs</p>
+      <p>Location: ${partner.location}</p>
+      <p>Distance: ${partner.distance}</p>
     `;
     container.appendChild(div);
   });
