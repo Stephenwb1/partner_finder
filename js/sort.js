@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let allPartners = [];
 let myself = {};
 
+
 Promise.all([
   fetch('data/data.json').then(res => res.json()),
   fetch('data/myself.json').then(res => res.json())
@@ -58,4 +59,8 @@ function renderPartners(partners) {
   });
 }
 
+});
+
+document.getElementById("findBtn").addEventListener("click", () => {
+    window.location.href = "results.html"; // Navigate to user input page
 });
