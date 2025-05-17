@@ -13,6 +13,7 @@ Promise.all([
 
   const bestMatches = findBestPartners(allPartners, myself);
   renderPartners(bestMatches);
+  sortLocation();
 });
 function findBestPartners(partners, me) {
   return partners
