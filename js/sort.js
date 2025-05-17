@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let allPartners = [];
 let myself = {};
 
+
 Promise.all([
   fetch('data/data.json').then(res => res.json()),
   fetch('data/myself.json').then(res => res.json())
@@ -59,3 +60,56 @@ function renderPartners(partners) {
 }
 
 });
+
+document.getElementById("findBtn").addEventListener("click", () => {
+    window.location.href = "results.html"; // Navigate to user input page
+});
+// Hold JSON data once it's fetched
+let peopleData = [];
+
+// Load data
+fetch('data/data.json')
+  .then(response => response.json())
+  .then(data => {
+    peopleData = data;
+    // You can call a default sort/render here if needed:
+    // sortLocation();
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+
+  function sortLocation() {
+  const sorted = [...peopleData].sort((a, b) => Number(a.distance) - Number(b.distance));
+
+  sorted.forEach(person => {
+    // do something with person
+    console.log(`${person.name} - ${person.distance} km`);
+  });
+}
+
+ function sortGender(gender) {
+  const filtered = peopleData.filter(person => person.gender.toLowerCase() === gender.toLowerCase());
+
+  filtered.forEach(person => {
+    // do something with person
+    console.log(`${person.name} - ${person.gender}`);
+  });
+}
+
+function sortHeight(userHeight) {
+  const sorted = [...peopleData].sort((a, b) => {
+    return Math.abs(Number(a.height) - userHeight) - Math.abs(Number(b.height) - userHeight);
+  });
+
+  sorted.forEach(person => {
+    console.log(`${person.name} - ${person.height} cm (Δ = ${Math.abs(Number(person.height) - userHeight)})`);
+  });
+}
+function sortWeight(userWeight) {
+  const sorted = [...peopleData].sort((a, b) => {
+    return Math.abs(Number(a.weight) - userWeight) - Math.abs(Number(b.weight) - userWeight);
+  });
+
+  sorted.forEach(person => {
+    console.log(`${person.name} - ${person.weight} lbs (Δ = ${Math.abs(Number(person.weight) - userWeight)})`);
+  });
+}
