@@ -6,7 +6,7 @@
     "years_training": "31",
     "gender": "male",
     "belt": "black",
-    "height": "5'11",
+    "height": "180",
     "weight": "190"
   },
   {
@@ -16,7 +16,7 @@
     "years_training": "13",
     "gender": "male",
     "belt": "blue",
-    "height": "6'1",
+    "height": "185",
     "weight": "380"
   },
   {
@@ -26,7 +26,7 @@
     "years_training": "7",
     "gender": "male",
     "belt": "purple",
-    "height": "5'8",
+    "height": "174",
     "weight": "175"
   }
 ]
