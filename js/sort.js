@@ -80,19 +80,21 @@ fetch('data/data.json')
   function sortLocation() {
   const sorted = [...peopleData].sort((a, b) => Number(a.distance) - Number(b.distance));
 
-  sorted.forEach(person => {
-    // do something with person
-    console.log(`${person.name} - ${person.distance} km`);
-  });
+  // sorted.forEach(person => {
+  //   // do something with person
+  //   console.log(`${person.name} - ${person.distance} km`);
+  // });
+  renderPartners(sorted.slice(0, 4));
 }
 
  function sortGender(gender) {
   const filtered = peopleData.filter(person => person.gender.toLowerCase() === gender.toLowerCase());
 
-  filtered.forEach(person => {
-    // do something with person
-    console.log(`${person.name} - ${person.gender}`);
-  });
+  // filtered.forEach(person => {
+  //   // do something with person
+  //   console.log(`${person.name} - ${person.gender}`);
+  // });
+  renderPartners(filtered.slice(0, 4));
 }
 
 function sortHeight(userHeight) {
@@ -100,16 +102,18 @@ function sortHeight(userHeight) {
     return Math.abs(Number(a.height) - userHeight) - Math.abs(Number(b.height) - userHeight);
   });
 
-  sorted.forEach(person => {
-    console.log(`${person.name} - ${person.height} cm (Δ = ${Math.abs(Number(person.height) - userHeight)})`);
-  });
+  // sorted.forEach(person => {
+  //   console.log(`${person.name} - ${person.height} cm (Δ = ${Math.abs(Number(person.height) - userHeight)})`);
+  // });
+  renderPartners(sorted.slice(0, 4));
 }
 function sortWeight(userWeight) {
   const sorted = [...peopleData].sort((a, b) => {
     return Math.abs(Number(a.weight) - userWeight) - Math.abs(Number(b.weight) - userWeight);
   });
 
-  sorted.forEach(person => {
-    console.log(`${person.name} - ${person.weight} lbs (Δ = ${Math.abs(Number(person.weight) - userWeight)})`);
-  });
+  // sorted.forEach(person => {
+  //   console.log(`${person.name} - ${person.weight} lbs (Δ = ${Math.abs(Number(person.weight) - userWeight)})`);
+  // });
+  renderPartners(sorted.slice(0, 4));
 }
