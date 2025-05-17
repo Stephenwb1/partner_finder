@@ -1,6 +1,7 @@
 [
   {
     "name": "Craig Jones",
+    "age": "31",
     "location": "Austin, Texas", 
     "distance": "500",
     "years_training": "31",
@@ -11,6 +12,7 @@
   },
   {
     "name": "Jerry Lukose",
+    "age": "20",
     "location": "Santa Cruz, California", 
     "distance": "0",
     "years_training": "13",
@@ -21,6 +23,7 @@
   },
   {
     "name": "Jameson Spence",
+    "age": "24",
     "location": "Santa Cruz, California", 
     "distance": "0",
     "years_training": "7",
