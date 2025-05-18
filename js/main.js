@@ -27,26 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortSelect = document.getElementById("sortSelect");
 
         if (sortSelect) {
-        sortSelect.addEventListener("change", () => {
+          sortSelect.addEventListener("change", () => {
             const choice = sortSelect.value;
 
             switch (choice) {
-            case "distance":
+              case "distance":
                 sortLocation();
                 break;
-            case "gender":
+              case "gender":
                 sortGender(myself.gender);
                 break;
-            case "height":
+              case "height":
                 sortHeight(myself.height);
                 break;
-            case "weight":
+              case "weight":
                 sortWeight(myself.weight);
                 break;
-            default:
+              default:
                 renderPartners(bestMatches);
             }
-        });
+          });
         }
 
       })
@@ -71,7 +71,10 @@ function findBestPartners(partners, me) {
 
 function renderPartners(partners) {
   const container = document.getElementById('results');
-  container.innerHTML = '';
+  container.innerHTML = ''; // Clear the existing content
+
+  const list = document.createElement('div');
+  list.className = 'partner-list';
 
   partners.forEach(partner => {
     const div = document.createElement('div');
@@ -87,10 +90,11 @@ function renderPartners(partners) {
       <p>Location: ${partner.location}</p>
       <p>Distance: ${partner.distance} km</p>
     `;
-    container.appendChild(div);
+    list.appendChild(div);
   });
-}
 
+  container.appendChild(list);
+}
 function sortLocation() {
   const sorted = [...peopleData].sort((a, b) => Number(a.distance) - Number(b.distance));
   renderPartners(sorted.slice(0, 4));
@@ -114,3 +118,4 @@ function sortWeight(userWeight) {
   );
   renderPartners(sorted.slice(0, 4));
 }
+

@@ -63,3 +63,28 @@ button:hover {
   border-radius: 8px;
   font-size: 1rem;
 }
+.partner-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.partner-card {
+  flex: 1 1 22%;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 255, 204, 0.3);
+  text-align: center;
+}
+
+
+.description {
+  font-size: 1.25rem;      /* Bigger font size */
+  max-width: 600px;        /* Limit width so it doesn’t span full screen */
+  margin-left: 0;          /* Align left */
+  margin-right: auto;      /* Push it from the right side */
+  line-height: 1.5;
+}
