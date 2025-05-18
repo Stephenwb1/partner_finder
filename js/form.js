@@ -1,31 +1,24 @@
-const form = document.getElementById("userForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("userForm");
 
-// Load saved data and pre-fill form
-window.addEventListener("DOMContentLoaded", () => {
-  const savedData = localStorage.getItem("userData");
-  if (savedData) {
-    const userData = JSON.parse(savedData);
-    for (const [key, value] of Object.entries(userData)) {
-      const input = form.elements.namedItem(key);
-      if (input) {
-        input.value = value;
-      }
-    }
-  }
-});
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-// Save form data to localStorage on submit
-form.addEventListener("submit", (e) => {
-  e.preventDefault(); // prevent actual form submission
+    const formData = new FormData(form);
 
-  const formData = new FormData(form);
-  const dataObj = {};
+    const myself = {
+      name: formData.get("name"),
+      age: Number(formData.get("age")),
+      location: formData.get("location"),
+      distance: Number(formData.get("distance")),
+      years_training: Number(formData.get("years_training")),
+      gender: formData.get("gender"),
+      belt: formData.get("belt"),
+      height: Number(formData.get("height")),
+      weight: Number(formData.get("weight"))
+    };
 
-  for (const [key, value] of formData.entries()) {
-    dataObj[key] = value;
-  }
-
-  localStorage.setItem("userData", JSON.stringify(dataObj));
-
-  alert("Your data has been saved locally!");
+    localStorage.setItem("myself", JSON.stringify(myself));
+    window.location.href = "results.html";
+  });
 });
